@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="844,700.666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1150,700.666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -85,7 +85,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,183.666666666667</av:Point>
           <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,236.333333333334 300,323.666666666667</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,236.333333333334 300,343.666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Config_Sequence workflow" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Config_Sequence.xaml">
@@ -105,17 +105,17 @@
         <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,323.666666666667</av:Point>
+              <av:Point x:Key="ShapeLocation">200,343.666666666667</av:Point>
               <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Extract_SmartPhone_Product_Description_From_Flipkart workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Extract_SmartPhone_Product_Description_From_Flipkart.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExtractAllHoroscopeSigns workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ExtractAllHoroscopeSigns.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrFlipkartUrl">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;FlipkartUrl&quot;).ToString" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_HoroscopeUrl">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;HoroscopeUrl&quot;).ToString" />
               </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WriteMobileExcelPath">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;WriteMobileExcelPath&quot;).ToString" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_WriteHoroscopeExcelPath">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;WriteHoroscopeExcelPath&quot;).ToString" />
               </InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_ExcelSheetName">
                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;SheetName&quot;).ToString" />
@@ -129,6 +129,26 @@
           </ui:InvokeWorkflowFile>
         </FlowStep>
       </FlowStep.Next>
+    </FlowStep>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">20,473.666666666667</av:Point>
+          <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Extract_SmartPhone_Product_Description_From_Flipkart workflow" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Extract_SmartPhone_Product_Description_From_Flipkart.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_StrFlipkartUrl">[json_ReadJsonConfigSettings("FlipkartUrl").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_WriteMobileExcelPath">[json_ReadJsonConfigSettings("WriteMobileExcelPath").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExcelSheetName">[json_ReadJsonConfigSettings("SheetName").ToString]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
     </FlowStep>
     <x:Reference>__ReferenceID0</x:Reference>
   </Flowchart>

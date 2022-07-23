@@ -5,6 +5,7 @@
 			"WriteHoroscopeExcelPath": "DailyHoroscopeDescription.xlsx",
 			"SheetName": "Sheet1",
 			"MobileGmailSubject": "Prices of today's smart phones(The prices are taken from the flipkart website)" ,
+			"HoroscopeGmailSubject": "Daily Horoscope(Zodiac signs are taken from the cyberastro website)",
             "MailTo":"sharongiftae5@gmail.com,sankaravenie5@gmail.com,aartiak.e5@gmail.com,sornalakshmie5@gmail.com,mvprashanth97@gmail.com,narenbagavathye5@gmail.com,sathyamoorthie5@gmail.com,lakshmi.n@e5.ai",
             "PortNumber": "465",
 			"ImapEmailAddress": "imap.gmail.com",
