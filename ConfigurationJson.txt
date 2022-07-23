@@ -1,0 +1,7 @@
+{
+            "FlipkartUrl": "https://srirangaminfo.com/thirukkural.php",
+			"HoroscopeUrl": "",
+            "MailTo":"sharongiftae5@gmail.com,sankaravenie5@gmail.com,aartiak.e5@gmail.com,sornalakshmie5@gmail.com,mvprashanth97@gmail.com,narenbagavathye5@gmail.com,sathyamoorthie5@gmail.com,alagappan.m@e5.ai,naresh.kumar@e5.ai,dharani.ravindranathtagore@e5.ai,lakshmi.n@e5.ai",
+            "PortNumber":"465",
+            "EmailServer":"smtp.gmail.com"
+}
