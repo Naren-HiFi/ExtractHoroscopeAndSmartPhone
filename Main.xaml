@@ -58,17 +58,13 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:String" Name="str_ConfigFilePath">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">ConfigurationJson.txt</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="ConfigurationJson.txt" Name="str_ConfigFilePath" />
       <Variable x:TypeArguments="x:String" Name="str_MailUserName" />
       <Variable x:TypeArguments="x:String" Name="str_MailPassword" />
       <Variable x:TypeArguments="njl:JObject" Name="json_ReadJsonConfigSettings" />
@@ -82,29 +78,22 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID0">
+    <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,183.666666666667</av:Point>
           <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,236.333333333334 300,323.666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Config_Sequence workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Config_Sequence.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Config_Sequence workflow" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Config_Sequence.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFilePath">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ConfigFilePath" />
-          </InArgument>
-          <OutArgument x:TypeArguments="njl:JObject" x:Key="out_ConfigJson">
-            <mva:VisualBasicReference x:TypeArguments="njl:JObject" ExpressionText="json_ReadJsonConfigSettings" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_MailPassWord">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MailPassword" />
-          </OutArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_MailUserName">
-            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_MailUserName" />
-          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFilePath">[str_ConfigFilePath]</InArgument>
+          <OutArgument x:TypeArguments="njl:JObject" x:Key="out_ConfigJson">[json_ReadJsonConfigSettings]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_MailPassWord">[str_MailPassword]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_MailUserName">[str_MailUserName]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -112,6 +101,35 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">200,323.666666666667</av:Point>
+              <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Extract_SmartPhone_Product_Description_From_Flipkart workflow" sap:VirtualizedContainerService.HintSize="379.333333333333,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Extract_SmartPhone_Product_Description_From_Flipkart.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrFlipkartUrl">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;FlipkartUrl&quot;).ToString" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WriteMobileExcelPath">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;WriteMobileExcelPath&quot;).ToString" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelSheetName">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;SheetName&quot;).ToString" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </FlowStep>
+      </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
   </Flowchart>
 </Activity>
