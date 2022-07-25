@@ -85,7 +85,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,183.666666666667</av:Point>
           <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,236.333333333334 300,343.666666666667</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,236.333333333334 300,313.666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Config_Sequence workflow" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Config_Sequence.xaml">
@@ -105,21 +105,13 @@
         <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,343.666666666667</av:Point>
+              <av:Point x:Key="ShapeLocation">200,313.666666666667</av:Point>
               <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExtractAllHoroscopeSigns workflow" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ExtractAllHoroscopeSigns.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Extract_Specific_Horoscope_Sign workflow" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Extract_Specific_Horoscope_Sign.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_HoroscopeUrl">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;HoroscopeUrl&quot;).ToString" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_WriteHoroscopeExcelPath">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;WriteHoroscopeExcelPath&quot;).ToString" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelSheetName">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;SheetName&quot;).ToString" />
-              </InArgument>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -142,6 +134,32 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_StrFlipkartUrl">[json_ReadJsonConfigSettings("FlipkartUrl").ToString]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_WriteMobileExcelPath">[json_ReadJsonConfigSettings("WriteMobileExcelPath").ToString]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_ExcelSheetName">[json_ReadJsonConfigSettings("SheetName").ToString]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+    </FlowStep>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">300,523.666666666667</av:Point>
+          <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExtractAllHoroscopeSigns workflow" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ExtractAllHoroscopeSigns.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_HoroscopeUrl">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;HoroscopeUrl&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_WriteHoroscopeExcelPath">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;WriteHoroscopeExcelPath&quot;).ToString" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExcelSheetName">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="json_ReadJsonConfigSettings(&quot;SheetName&quot;).ToString" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
